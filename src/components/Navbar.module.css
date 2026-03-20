@@ -1,0 +1,76 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(251, 245, 247, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 1px 0 rgba(156, 56, 83, 0.08);
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.logo {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: -0.04em;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navLink {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--on-surface);
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.navLink:hover {
+  color: var(--primary);
+  transform: scale(1.05);
+}
+
+.navLinkActive {
+  color: var(--primary);
+  border-bottom-color: var(--primary-container);
+}
+
+.bookBtn {
+  font-size: 0.9rem;
+  padding: 0.6rem 1.4rem;
+}
+
+@media (max-width: 768px) {
+  .links {
+    display: none;
+  }
+
+  .inner {
+    padding: 1rem 1.25rem;
+  }
+}
