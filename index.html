@@ -1,13 +1,31 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VetCenter 🐾</title>
+    <title>Dra. Alejandra Ríos — Veterinaria a Domicilio en Asunción</title>
+    <meta name="description" content="Atención veterinaria personalizada a domicilio en Asunción, Paraguay. Consultas, vacunación, cirugías y emergencias 24/7. Sin filas, sin estrés." />
+    <meta name="keywords" content="veterinaria domicilio asuncion paraguay, veterinaria a domicilio, emergencias veterinarias 24/7, vacunacion mascotas" />
+    <meta property="og:title" content="Dra. Alejandra Ríos — Veterinaria a Domicilio" />
+    <meta property="og:description" content="Atención veterinaria a domicilio en Asunción. Sin estrés para tu mascota." />
+    <meta property="og:type" content="website" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+    <!-- Hidden form for Netlify form detection at build time -->
+    <form name="contacto" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="text" name="nombre" />
+      <input type="email" name="email" />
+      <input type="tel" name="telefono" />
+      <input type="text" name="mascota" />
+      <select name="tipo-mascota">
+        <option>Perro</option>
+        <option>Gato</option>
+        <option>Otro</option>
+      </select>
+      <textarea name="mensaje"></textarea>
+      <input name="bot-field" />
+    </form>
   </head>
   <body>
     <div id="root"></div>

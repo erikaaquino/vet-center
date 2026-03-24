@@ -16,7 +16,7 @@ export default function Footer() {
           <Link to="/">Servicios</Link>
           <Link to="/pet-care">Cuidados</Link>
           <Link to="/emergency">Emergencias</Link>
-          <a href="#">Contacto</a>
+          <Link to="/contact">Contacto</Link>
           <a href="https://wa.me/595986368385" target="_blank" rel="noopener noreferrer">WhatsApp</a>
         </div>
 

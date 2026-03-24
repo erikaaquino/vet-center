@@ -85,6 +85,15 @@
   border-radius: 9999px;
   font-size: 0.85rem;
   font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+
+.tag:hover {
+  background: var(--primary-container);
+  color: var(--on-primary-container);
+  transform: scale(1.03);
 }
 
 .heroMedia {
@@ -376,7 +385,11 @@
   transform: rotate(0deg);
 }
 
-/* NEWSLETTER */
+/* NEWSLETTER / CONTACT CTA */
+.newsletterInner {
+  width: 100%;
+}
+
 .newsletter {
   background: linear-gradient(135deg, #9c3853 0%, #8d2c48 100%);
   border-radius: 3rem;

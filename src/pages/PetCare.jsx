@@ -1,4 +1,12 @@
+import { Link } from 'react-router-dom';
 import styles from './PetCare.module.css';
+
+const topics = [
+  { label: 'Cachorros', to: '/cachorros' },
+  { label: 'Nutrición', to: '/nutricion' },
+  { label: 'Consejos felinos', to: '/gatos' },
+  { label: 'Mascotas mayores', to: '/mascotas-mayores' },
+];
 
 export default function PetCare() {
   return (
@@ -17,11 +25,11 @@ export default function PetCare() {
               Bienvenido a nuestra biblioteca de amor. Explorá guías expertas, consejos prácticos e información de confianza para mantener a tus mascotas sanas y felices.
             </p>
             <div className={styles.topicTags}>
-              {['Cachorros', 'Nutrición', 'Consejos felinos', 'Mascotas mayores'].map(tag => (
-                <div key={tag} className={styles.tag}>
+              {topics.map(tag => (
+                <Link key={tag.label} to={tag.to} className={styles.tag}>
                   <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1", color: 'var(--primary)', fontSize: '1rem' }}>pets</span>
-                  {tag}
-                </div>
+                  {tag.label}
+                </Link>
               ))}
             </div>
           </div>
@@ -65,7 +73,7 @@ export default function PetCare() {
                   </li>
                 ))}
               </ul>
-              <button className="pill-btn pill-btn-primary" style={{ marginTop: '2rem', alignSelf: 'flex-start' }}>Leer guía completa</button>
+              <Link to="/cachorros" className="pill-btn pill-btn-primary" style={{ marginTop: '2rem', alignSelf: 'flex-start' }}>Leer guía completa</Link>
             </div>
 
             <div className={`${styles.guideCardSm} card card-hover`} style={{ background: 'var(--secondary-container)', position: 'relative', overflow: 'hidden' }}>
@@ -79,7 +87,7 @@ export default function PetCare() {
                 <p className={styles.guideDesc} style={{ color: 'var(--on-secondary-container)', opacity: 0.85 }}>
                   La ventana crítica: exponé a tu cachorro a personas, sonidos y ambientes nuevos de forma segura antes de las 16 semanas.
                 </p>
-                <button className="pill-btn pill-btn-outline" style={{ marginTop: '1.5rem', alignSelf: 'flex-start', color: 'var(--on-secondary-container)' }}>Leer guía</button>
+                <Link to="/cachorros" className="pill-btn pill-btn-outline" style={{ marginTop: '1.5rem', alignSelf: 'flex-start', color: 'var(--on-secondary-container)' }}>Leer guía</Link>
               </div>
             </div>
           </div>
@@ -95,10 +103,10 @@ export default function PetCare() {
           </div>
           <div className={styles.nutritionGrid}>
             {[
-              { icon: 'eco', title: 'Dieta equilibrada', desc: 'Proteínas, grasas, carbohidratos, vitaminas y minerales — lo que tu mascota necesita en cada etapa de su vida.', bg: 'var(--tertiary-container)', iconColor: 'var(--on-tertiary-container)' },
-              { icon: 'water_drop', title: 'La hidratación importa', desc: 'Los gatos especialmente necesitan incentivos para tomar agua. Descubrí cuánta agua necesita tu mascota cada día.', bg: 'var(--primary-container)', iconColor: 'var(--on-primary-container)' },
-              { icon: 'no_food', title: 'Alimentos a evitar', desc: 'Uvas, chocolate, cebollas, xilitol — una lista completa de alimentos tóxicos para perros y gatos.', bg: 'var(--error-container)', iconColor: 'var(--on-error-container)' },
-              { icon: 'monitor_weight', title: 'Control de peso', desc: 'La obesidad afecta al 60% de las mascotas. Aprendé a evaluar la condición corporal y mantener un peso saludable.', bg: 'var(--surface-container)', iconColor: 'var(--on-surface)' },
+              { icon: 'eco', title: 'Dieta equilibrada', desc: 'Proteínas, grasas, carbohidratos, vitaminas y minerales — lo que tu mascota necesita en cada etapa de su vida.', bg: 'var(--tertiary-container)', iconColor: 'var(--on-tertiary-container)', anchor: '#dieta' },
+              { icon: 'water_drop', title: 'La hidratación importa', desc: 'Los gatos especialmente necesitan incentivos para tomar agua. Descubrí cuánta agua necesita tu mascota cada día.', bg: 'var(--primary-container)', iconColor: 'var(--on-primary-container)', anchor: '#hidratacion' },
+              { icon: 'no_food', title: 'Alimentos a evitar', desc: 'Uvas, chocolate, cebollas, xilitol — una lista completa de alimentos tóxicos para perros y gatos.', bg: 'var(--error-container)', iconColor: 'var(--on-error-container)', anchor: '#alimentos' },
+              { icon: 'monitor_weight', title: 'Control de peso', desc: 'La obesidad afecta al 60% de las mascotas. Aprendé a evaluar la condición corporal y mantener un peso saludable.', bg: 'var(--surface-container)', iconColor: 'var(--on-surface)', anchor: '#peso' },
             ].map(card => (
               <div key={card.title} className={`${styles.nutritionCard} card card-hover`}>
                 <div className={styles.nutritionIcon} style={{ background: card.bg }}>
@@ -106,7 +114,7 @@ export default function PetCare() {
                 </div>
                 <h3 className={styles.nutritionTitle}>{card.title}</h3>
                 <p className={styles.nutritionDesc}>{card.desc}</p>
-                <button className={styles.readMoreLink}>Leer más →</button>
+                <Link to={`/nutricion${card.anchor}`} className={styles.readMoreLink}>Leer más →</Link>
               </div>
             ))}
           </div>
@@ -139,6 +147,10 @@ export default function PetCare() {
                   </div>
                 ))}
               </div>
+              <Link to="/gatos" className="pill-btn pill-btn-primary" style={{ marginTop: '1.5rem', alignSelf: 'flex-start' }}>
+                <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>cruelty_free</span>
+                Ver guía completa de gatos
+              </Link>
             </div>
             <div className={styles.felineMedia}>
               <img
@@ -150,25 +162,25 @@ export default function PetCare() {
           </div>
         </section>
 
-        {/* Newsletter */}
+        {/* Contact CTA — replaces newsletter */}
         <section className={styles.newsletter}>
           <div className={styles.newsletterInner}>
             <div className={styles.newsletterBlob} />
             <div className={styles.newsletterContent}>
-              <h2 className={styles.newsletterTitle}>¡Mantenete al tanto!</h2>
+              <h2 className={styles.newsletterTitle}>¿Tenés alguna consulta?</h2>
               <p className={styles.newsletterSub}>
-                Suscribite a nuestro boletín mensual para recibir tips de cuidado, guías de salud estacional y novedades.
+                Escribime directamente o completá el formulario de contacto. Te respondo a la brevedad con orientación personalizada para tu mascota.
               </p>
-              <form className={styles.newsletterForm} onSubmit={e => e.preventDefault()}>
-                <input
-                  type="email"
-                  placeholder="Tu correo electrónico"
-                  className={styles.newsletterInput}
-                />
-                <button type="submit" className="pill-btn pill-btn-outline" style={{ flexShrink: 0 }}>
-                  Suscribirme
-                </button>
-              </form>
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+                <a href="https://wa.me/595986368385" target="_blank" rel="noopener noreferrer" className="pill-btn pill-btn-outline">
+                  <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>chat</span>
+                  WhatsApp
+                </a>
+                <Link to="/contact" className="pill-btn" style={{ background: 'rgba(255,255,255,0.15)', color: '#fff', backdropFilter: 'blur(8px)' }}>
+                  <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>mail</span>
+                  Formulario de contacto
+                </Link>
+              </div>
             </div>
           </div>
         </section>

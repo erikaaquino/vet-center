@@ -63,7 +63,10 @@ export default function Services() {
                 <li><span className={styles.checkDot} />Control y seguimiento</li>
                 <li><span className={styles.checkDot} />Orientación al dueño</li>
               </ul>
-              <button className="pill-btn pill-btn-primary" style={{ marginTop: '2rem', alignSelf: 'flex-start' }}>Consultar</button>
+              <a href="https://wa.me/595986368385?text=Hola%20Dra.%20Alejandra%2C%20me%20gustar%C3%ADa%20consultar%20sobre%20una%20visita%20a%20domicilio." target="_blank" rel="noopener noreferrer" className="pill-btn pill-btn-primary" style={{ marginTop: '2rem', alignSelf: 'flex-start' }}>
+                <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>chat</span>
+                Consultar por WhatsApp
+              </a>
             </div>
           </div>
 

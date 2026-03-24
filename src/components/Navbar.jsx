@@ -20,6 +20,7 @@ export default function Navbar() {
           <Link className={linkClass('/')} to="/">Servicios</Link>
           <Link className={linkClass('/pet-care')} to="/pet-care">Cuidados</Link>
           <Link className={linkClass('/emergency')} to="/emergency">Emergencias</Link>
+          <Link className={linkClass('/contact')} to="/contact">Contacto</Link>
         </div>
 
         <a href="https://wa.me/595986368385" target="_blank" rel="noopener noreferrer" className={`pill-btn pill-btn-secondary ${styles.bookBtn}`}>
