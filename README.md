@@ -2,7 +2,7 @@
 
 A production-ready website for a home veterinary service based in Asunción, Paraguay. Built as a real client project with a modern React stack, deployed on Netlify.
 
-**Live site:** [vet-center on Netlify]
+**Live site:** https://doctora-veterinaria-alejandra.netlify.app/
 
 ---
 
